@@ -1,0 +1,10 @@
+<mapper namespace="user">
+
+    <select id="findAll" resultType="com.mx.pojo.User">
+        select * from user
+    </select>
+
+    <select id="findByCondition" resultType="com.mx.pojo.User" parameterType="com.mx.pojo.User">
+        select * from user where id = #{id} and name = #{name}
+    </select>
+</mapper>
