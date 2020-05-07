@@ -1,4 +1,4 @@
-<mapper namespace="user">
+<mapper namespace="com.mx.mapper.UserMapper">
 
     <select id="findAll" parameterType="com.mx.pojo.User" resultType="com.mx.pojo.User">
         select * from user
