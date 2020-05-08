@@ -33,7 +33,7 @@ public class IUserDaoTest {
         user.setId(1);
         user.setUsername("mx");
 
-        List<User> users = sqlSession.selectList("user.findAll", user);
+        List<User> users = sqlSession.selectList("com.mx.mapper.UserMapper.findAll", user);
 
 //        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 //        List<User> users = mapper.findAll();
@@ -53,12 +53,12 @@ public class IUserDaoTest {
         User user = new User();
         user.setUsername("xiaoming");
 
-        User u = sqlSession.selectOne("user.findAll", user);
+        User u = sqlSession.selectOne("com.mx.mapper.UserMapper.findAll", user);
         System.out.println(u);
     }
 
     @Test
-    public void getMapper() throws PropertyVetoException, DocumentException {
+    public void getQueryMapper() throws PropertyVetoException, DocumentException {
 
         InputStream inputStream = Resources.getSourceAsStream("sqlMapConfig.xml");
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
@@ -70,6 +70,10 @@ public class IUserDaoTest {
         for (User user : users) {
             System.out.println(user);
         }
+    }
+
+    @Test
+    public void getAddMapper() {
 
     }
 }
