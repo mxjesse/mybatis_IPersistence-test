@@ -1,0 +1,23 @@
+<mapper namespace="com.mx.mapper.UserMapper">
+
+    <select id="findAll" parameterType="com.mx.pojo.User" resultType="com.mx.pojo.User">
+        select * from user
+    </select>
+
+    <select id="findByCondition" resultType="com.mx.pojo.User" parameterType="com.mx.pojo.User">
+        select * from user where username = #{username}
+    </select>
+
+    <insert id="add" resultType="boolean" parameterType="com.mx.pojo.User">
+        insert into user (username, password, birthday) values (#{username}, #{password}, #{birthday})
+    </insert>
+
+    <update id="update" resultType="boolean" parameterType="com.mx.pojo.User">
+        update user set password = #{password}, birthday = #{birthday} where username = #{username}
+    </update>
+
+    <delete id="delete" resultType="boolean" parameterType="com.mx.pojo.User">
+        delete from user where username = #{username}
+    </delete>
+
+</mapper>
